@@ -1,0 +1,131 @@
+const reviews = [
+    {
+      image: "https://www.thespruceeats.com/thmb/j6CWd-3Fj8Y3Vsk0rkxk4IgWAlA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-fried-chicken-3056870-hero-01-f88c0cd519ca4a7db62275d78186f833.jpg",
+      cost: "₹500",
+      taste: 4.0,
+      review: "The dish looked absolutely stunning! The presentation was on point. The cost was reasonable, and the taste was delightful. Highly recommended!"
+    },
+    {
+      image: "https://www.thespruceeats.com/thmb/j6CWd-3Fj8Y3Vsk0rkxk4IgWAlA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-fried-chicken-3056870-hero-01-f88c0cd519ca4a7db62275d78186f833.jpg",
+      cost: "₹350",
+      taste: 4.2,
+      review: "The dish was visually appealing. While the cost was slightly on the higher side, the taste compensated for it. Would definitely have it again!"
+    },
+    {
+      image: "https://www.thespruceeats.com/thmb/j6CWd-3Fj8Y3Vsk0rkxk4IgWAlA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-fried-chicken-3056870-hero-01-f88c0cd519ca4a7db62275d78186f833.jpg",
+      cost: "₹400",
+      taste: 3.5,
+      review: "The dish was decently priced and had an interesting presentation. However, the taste didn't meet my expectations. It was just average."
+    },
+    {
+      image: "https://www.thespruceeats.com/thmb/j6CWd-3Fj8Y3Vsk0rkxk4IgWAlA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-fried-chicken-3056870-hero-01-f88c0cd519ca4a7db62275d78186f833.jpg",
+      cost: "₹200",
+      taste: 4.8,
+      review: "An absolute steal at this price! The dish exceeded my expectations in terms of taste and presentation. I would highly recommend trying it."
+    },
+    {
+      image: "https://www.thespruceeats.com/thmb/j6CWd-3Fj8Y3Vsk0rkxk4IgWAlA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-fried-chicken-3056870-hero-01-f88c0cd519ca4a7db62275d78186f833.jpg",
+      cost: "₹450",
+      taste: 4.3,
+      review: "The cost was justified considering the quality of the dish. It had a unique blend of flavors, making it a memorable dining experience."
+    },
+    {
+      image: "https://www.thespruceeats.com/thmb/j6CWd-3Fj8Y3Vsk0rkxk4IgWAlA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-fried-chicken-3056870-hero-01-f88c0cd519ca4a7db62275d78186f833.jpg",
+      cost: "₹300",
+      taste: 3.7,
+      review: "The dish was reasonably priced, but the taste didn't impress me much. It was just average and nothing exceptional."
+    },
+    {
+      image: "https://www.thespruceeats.com/thmb/j6CWd-3Fj8Y3Vsk0rkxk4IgWAlA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-fried-chicken-3056870-hero-01-f88c0cd519ca4a7db62275d78186f833.jpg",
+      cost: "₹550",
+      taste: 4.6,
+      review: "Worth every penny! The dish was a masterpiece. The cost may be slightly high, but the taste was out of this world."
+    },
+    {
+      image: "https://www.thespruceeats.com/thmb/j6CWd-3Fj8Y3Vsk0rkxk4IgWAlA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-fried-chicken-3056870-hero-01-f88c0cd519ca4a7db62275d78186f833.jpg",
+      cost: "₹400",
+      taste: 4.1,
+      review: "The dish had a fair price, and the taste was quite good. It left a pleasant impression, and I would consider ordering it again."
+    },
+    {
+      image: "https://www.thespruceeats.com/thmb/j6CWd-3Fj8Y3Vsk0rkxk4IgWAlA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-fried-chicken-3056870-hero-01-f88c0cd519ca4a7db62275d78186f833.jpg",
+      cost: "₹250",
+      taste: 3.9,
+      review: "The dish offered great value for money. The taste was decent, but it could have been better. Overall, it was a satisfactory experience."
+    },
+    {
+      image: "https://www.thespruceeats.com/thmb/j6CWd-3Fj8Y3Vsk0rkxk4IgWAlA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-fried-chicken-3056870-hero-01-f88c0cd519ca4a7db62275d78186f833.jpg",
+      cost: "₹500",
+      taste: 4.4,
+      review: "The dish was on the pricier side, but the taste justified it. It was a delightful combination of flavors and textures."
+    }
+  ];
+  
+  
+  var display = document.getElementById('display');
+  
+
+
+
+  var count = 0;
+
+function renderList() {
+  display.innerHTML=''
+  const review = reviews[count];
+  const reviewContainer = document.createElement('div');
+  reviewContainer.classList.add('card-container');
+  const reviewCard = document.createElement('div');
+  reviewCard.classList.add('card');
+
+  const image = document.createElement('img');
+  image.src = review.image;
+  image.alt = "Food Image";
+  image.classList.add('card-image');
+  reviewCard.appendChild(image);
+
+  const cost = document.createElement('p');
+  cost.innerText = `Cost: ${review.cost}`;
+  cost.classList.add('card-cost');
+  reviewCard.appendChild(cost);
+
+  const taste = document.createElement('p');
+  taste.innerText = `Taste Rating: ${review.taste}`;
+  taste.classList.add('card-taste');
+  reviewCard.appendChild(taste);
+
+  const reviewText = document.createElement('p');
+  reviewText.innerText = review.review;
+  reviewText.classList.add('card-review');
+  reviewCard.appendChild(reviewText);
+
+  const leftArrow = document.createElement('i');
+  leftArrow.classList.add('card-arrow', 'fas', 'fa-arrow-left');
+
+  reviewCard.appendChild(leftArrow);
+
+  const rightArrow = document.createElement('i');
+  rightArrow.classList.add('card-arrow', 'down-card-arrow', 'fas', 'fa-arrow-right');
+  reviewCard.appendChild(rightArrow);
+
+  reviewContainer.appendChild(reviewCard);
+
+  display.appendChild(reviewContainer);
+
+  leftArrow.addEventListener('click', () => {
+    count--;
+    if (count < 0) {
+      count = 0;
+    }
+    renderList();
+  });
+
+  rightArrow.addEventListener('click', () => {
+    count++;
+    if (count >= reviews.length) {
+      count = reviews.length - 1;
+    }
+    renderList();
+  });
+}
+
+renderList();

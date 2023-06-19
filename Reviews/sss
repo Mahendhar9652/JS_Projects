@@ -1,0 +1,128 @@
+const reviews = [
+    {
+      image: "https://www.thespruceeats.com/thmb/j6CWd-3Fj8Y3Vsk0rkxk4IgWAlA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-fried-chicken-3056870-hero-01-f88c0cd519ca4a7db62275d78186f833.jpg",
+      cost: "₹500",
+      taste: 4.0,
+      review: "The dish looked absolutely stunning! The presentation was on point. The cost was reasonable, and the taste was delightful. Highly recommended!"
+    },
+    {
+      image: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.indianexpress.com%2F2022%2F07%2Fdiet-food_200_getty.jpg&tbnid=YRTCHpYxPDsIAM&vet=12ahUKEwjWuKfV8Mr_AhXkKLcAHUK0Dg8QMygLegUIARD7AQ..i&imgrefurl=https%3A%2F%2Findianexpress.com%2Farticle%2Flifestyle%2Fhealth%2Fnutritionist-order-of-eating-food-health-benefits-proteins-carbs-8051584%2F&docid=Gc0JVFD6dMY1pM&w=1200&h=667&q=food%20images&ved=2ahUKEwjWuKfV8Mr_AhXkKLcAHUK0Dg8QMygLegUIARD7AQ",
+      cost: "₹350",
+      taste: 4.2,
+      review: "The dish was visually appealing. While the cost was slightly on the higher side, the taste compensated for it. Would definitely have it again!"
+    },
+    {
+      image: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.teenaagnel.com%2Fwp-content%2Fuploads%2F2019%2F12%2Ffood-photography-in-dubai.jpg&tbnid=5oRymy86E62piM&vet=12ahUKEwjWuKfV8Mr_AhXkKLcAHUK0Dg8QMygRegUIARCHAg..i&imgrefurl=https%3A%2F%2Fwww.teenaagnel.com%2Fimportance-of-food-photography-for-restaurants%2F&docid=7LeNj_d-br75-M&w=1920&h=1280&q=food%20images&ved=2ahUKEwjWuKfV8Mr_AhXkKLcAHUK0Dg8QMygRegUIARCHAg",
+      cost: "₹400",
+      taste: 3.5,
+      review: "The dish was decently priced and had an interesting presentation. However, the taste didn't meet my expectations. It was just average."
+    },
+    {
+      image: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.cnn.com%2Fapi%2Fv1%2Fimages%2Fstellar%2Fprod%2F140430115517-06-comfort-foods.jpg%3Fq%3Dw_1080%2Ch_720%2Cx_100%2Cy_0%2Cc_crop&tbnid=p-9bwddYnZi37M&vet=12ahUKEwjWuKfV8Mr_AhXkKLcAHUK0Dg8QMygfegUIARCrAg..i&imgrefurl=https%3A%2F%2Fwww.cnn.com%2Ftravel%2Farticle%2Fworld-best-food-dishes%2Findex.html&docid=Cb_HUsZ6yeTAcM&w=1080&h=720&q=food%20images&ved=2ahUKEwjWuKfV8Mr_AhXkKLcAHUK0Dg8QMygfegUIARCrAg",
+      cost: "₹200",
+      taste: 4.8,
+      review: "An absolute steal at this price! The dish exceeded my expectations in terms of taste and presentation. I would highly recommend trying it."
+    },
+    {
+      image: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fassets.cntraveller.in%2Fphotos%2F63beac1d79d81704e445df48%2F16%3A9%2Fw_1024%252Cc_limit%2FChole-bhature.jpg&tbnid=kMpZ8QSCT9SDbM&vet=12ahUKEwjWuKfV8Mr_AhXkKLcAHUK0Dg8QMyg5egQIARB2..i&imgrefurl=https%3A%2F%2Fwww.cntraveller.in%2Fstory%2Fbest-food-to-eat-at-indias-railway-stations-irctc%2F&docid=5hLii0tKbo0gXM&w=1024&h=576&q=food%20images&ved=2ahUKEwjWuKfV8Mr_AhXkKLcAHUK0Dg8QMyg5egQIARB2",
+      cost: "₹450",
+      taste: 4.3,
+      review: "The cost was justified considering the quality of the dish. It had a unique blend of flavors, making it a memorable dining experience."
+    },
+    {
+      image: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fassets.gqindia.com%2Fphotos%2F61e16e982c3e19caea634ee9%2F16%3A9%2Fpass%2Fbest%2520and%2520worst%2520foods%2520to%2520eat%2520for%2520dinner.jpg&tbnid=6UcssS4llVd_hM&vet=12ahUKEwjWuKfV8Mr_AhXkKLcAHUK0Dg8QMyhfegUIARDOAQ..i&imgrefurl=https%3A%2F%2Fwww.gqindia.com%2Flive-well%2Fcontent%2F8-best-and-worst-foods-you-can-have-for-dinner-according-to-the-experts&docid=gki5X60cAmuVYM&w=1920&h=1080&q=food%20images&ved=2ahUKEwjWuKfV8Mr_AhXkKLcAHUK0Dg8QMyhfegUIARDOAQ",
+      cost: "₹300",
+      taste: 3.7,
+      review: "The dish was reasonably priced, but the taste didn't impress me much. It was just average and nothing exceptional."
+    },
+    {
+      image: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fi0.wp.com%2Fpost.healthline.com%2Fwp-content%2Fuploads%2F2020%2F07%2Fthali-indian-1296x728-header.jpg%3Fw%3D1155%26h%3D1528&tbnid=U3bhBIO-giyy4M&vet=12ahUKEwjzy8PL8cr_AhXP2nMBHc8fCBgQMygCegUIARDqAQ..i&imgrefurl=https%3A%2F%2Fwww.healthline.com%2Fnutrition%2Findian-thali&docid=ePBVOvw_nU1NuM&w=1155&h=648&q=food%20imagesindia&ved=2ahUKEwjzy8PL8cr_AhXP2nMBHc8fCBgQMygCegUIARDqAQ",
+      cost: "₹550",
+      taste: 4.6,
+      review: "Worth every penny! The dish was a masterpiece. The cost may be slightly high, but the taste was out of this world."
+    },
+    {
+      image: "https://www.google.com/imgres?imgurl=https%3A%2F%2Frestaurantindia.s3.ap-south-1.amazonaws.com%2Fs3fs-public%2Fcontent6553.jpg&tbnid=yhF0zaRWSIJTCM&vet=12ahUKEwjzy8PL8cr_AhXP2nMBHc8fCBgQMygTegUIARCNAg..i&imgrefurl=https%3A%2F%2Frestaurant.indianretailer.com%2Farticle%2FSouth-Indian-cuisine-building-a-healthy-umpire.6553&docid=5GegUHJ2BSQyZM&w=1000&h=562&q=food%20imagesindia&ved=2ahUKEwjzy8PL8cr_AhXP2nMBHc8fCBgQMygTegUIARCNAg",
+      cost: "₹400",
+      taste: 4.1,
+      review: "The dish had a fair price, and the taste was quite good. It left a pleasant impression, and I would consider ordering it again."
+    },
+    {
+      image: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fsukhis.com%2Fapp%2Fuploads%2F2022%2F04%2Fimage3-4.jpg&tbnid=u-hxpM1Ihw2BCM&vet=12ahUKEwjzy8PL8cr_AhXP2nMBHc8fCBgQMygWegUIARCTAg..i&imgrefurl=https%3A%2F%2Fsukhis.com%2Fa-guide-to-south-indian-food%2F&docid=KKyPVHb5fZitmM&w=1999&h=1335&q=food%20imagesindia&ved=2ahUKEwjzy8PL8cr_AhXP2nMBHc8fCBgQMygWegUIARCTAg",
+      cost: "₹250",
+      taste: 3.9,
+      review: "The dish offered great value for money. The taste was decent, but it could have been better. Overall, it was a satisfactory experience."
+    },
+    {
+      image: "",
+      cost: "₹500",
+      taste: 4.4,
+      review: "The dish was on the pricier side, but the taste justified it. It was a delightful combination of flavors and textures."
+    }
+  ];
+  
+  
+var display = document.getElementById('display');
+var count = 0;
+
+var leftArrow = document.createElement('i');
+leftArrow.classList.add('card-arrow', 'fas', 'fa-arrow-left');
+
+var rightArrow = document.createElement('i');
+rightArrow.classList.add('card-arrow', 'down-card-arrow', 'fas', 'fa-arrow-right');
+
+leftArrow.addEventListener('click', () => {
+  count--;
+  if (count < 0) {
+    count = 0;
+  }
+  updateReview();
+});
+
+rightArrow.addEventListener('click', () => {
+  count++;
+  if (count >= reviews.length) {
+    count = reviews.length - 1;
+  }
+  updateReview();
+});
+
+function updateReview() {
+  display.innerHTML = ''; // Clear the display container
+
+  const review = reviews[count];
+  const reviewContainer = document.createElement('div');
+  reviewContainer.classList.add('card-container');
+  const reviewCard = document.createElement('div');
+  reviewCard.classList.add('card');
+
+  const image = document.createElement('img');
+  image.src = review.image;
+  image.alt = "Food Image";
+  image.classList.add('card-image');
+  reviewCard.appendChild(image);
+
+  const cost = document.createElement('p');
+  cost.innerText = `Cost: ${review.cost}`;
+  cost.classList.add('card-cost');
+  reviewCard.appendChild(cost);
+
+  const taste = document.createElement('p');
+  taste.innerText = `Taste Rating: ${review.taste}`;
+  taste.classList.add('card-taste');
+  reviewCard.appendChild(taste);
+
+  const reviewText = document.createElement('p');
+  reviewText.innerText = review.review;
+  reviewText.classList.add('card-review');
+  reviewCard.appendChild(reviewText);
+
+  reviewCard.appendChild(leftArrow);
+  reviewCard.appendChild(rightArrow);
+
+  reviewContainer.appendChild(reviewCard);
+
+  display.appendChild(reviewContainer);
+}
+
+updateReview();
