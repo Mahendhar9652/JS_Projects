@@ -1,15 +1,36 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modal</title>
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- styles -->
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <section>
+    <main id="main-container">
+      <div class="card" id="modal-pop-container">
+        <div class="modal-pop-content" id="modal-pop">
+          <h1>Modal Project</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <button class="btn modal-btn" id="btn">Open Modal</button>
+        </div>
+      </div>
 
-        <script src="index.js" async defer></script>
-    </body>
+      <!-- Modal -->
+      <div class="modal-overlay" id="modal-content">
+        <div class="modal-container">
+          <h3 class="modal-content">Modal Content</h3>
+          <button class="close-button" id="cross-icon"><i class="fas fa-times-circle" style="color: #3b511f;"></i></button>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <!-- javascript -->
+<script src="index.js"></script>
+</body>
 </html>

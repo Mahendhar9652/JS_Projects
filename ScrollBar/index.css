@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  #home {
+    position:relative;
+    background-image: url(hero-bcg.jpeg);
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .section {
+    height: 100vh;
+  }
+
+  #about {
+    position:relative;
+    background-color: #f1f5f8;
+    color: #15476f;
+    text-align: center;
+    font-size: 2em;
+    text-transform: capitalize;
+    padding: 50px;
+  }
+
+  #services {
+    background-color: #f1f5f8;
+    color: #15476f;
+    text-align: center;
+    font-size: 2em;
+    text-transform: capitalize;
+    padding: 50px;
+  }
+
+  #tours {
+    background-color: #f1f5f8;
+    color: #15476f;
+    text-align: center;
+    font-size: 2em;
+    text-transform: capitalize;
+    padding: 50px;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    color: #15476f;
+    text-transform: capitalize;
+    padding: 0 20px;
+  }
+
+  .logo {
+    width: 120px;
+    height: 40px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 30px;
+  }
+
+  .nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.5em;
+  }
+
+  .banner {
+    position: relative;
+    top: 200px;
+    margin-left: 400px;
+    width: 500px;
+    text-align: center;
+  }
+
+  .banner h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .banner p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .banner .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .banner .btn-white {
+    background-color: #fff;
+    color: #333;
+  }
+
+  .banner .btn:hover {
+    opacity: 0.8;
+  }
+
+  footer {
+    background-color: #102a42;
+    height: 10vh;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
