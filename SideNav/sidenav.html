@@ -9,21 +9,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header id="header">
-        <h1>My Website</h1>
-    </header>
+    <div class="menu-toggle">
+        <i class="fas fa-bars" id="bar"></i>
+    </div>
+
     <nav id="side-navbar" id="side-navbar">
+        <h1 class="side-heading">Coding Addict</h1>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#contact">Contact</a></li>
+        <i class="fa-solid fa-circle-xmark"id="circle" style="color:blue;"></i>
+
         </ul>
-        <i class="fa-solid fa-circle-xmark"id="circle" style="color: #3b511f;"></i>
+        <ul>
+            <li class="navbar-item social-icons">
+                <a href="https://www.facebook.com/" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/i/flow/login" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+            </li>
+        </ul>
     </nav>
-    <div class="menu-toggle">
-        <i class="fas fa-bars" id="bar"></i>
-    </div>
+ 
    
     <script src="index.js"></script>
 </body>

@@ -44,9 +44,6 @@ button.addEventListener('click', addItem);
 
 function addItem() {
   var text = inputText.value;
-  if (text.trim() === '') {
-    return;
-  }
   var newItem = { text: text };
   list.push(newItem);
   localStorage.setItem('items', JSON.stringify(list));
@@ -74,6 +71,7 @@ var updateIcons = document.querySelectorAll('.update-icon');
 updateIcons.forEach((icon) => {
   icon.addEventListener('click', (e) => {
     var indexValue = e.target.getAttribute('value');
+    button.innerText='Edit'
     var currentItem = list[indexValue];
     inputText.value = currentItem.text;
 
@@ -89,6 +87,7 @@ updateIcons.forEach((icon) => {
       inputText.value = '';
       button.removeEventListener('click', updateItem);
       button.addEventListener('click', addItem);
+      button.innerText='Add'
     }
   });
 });

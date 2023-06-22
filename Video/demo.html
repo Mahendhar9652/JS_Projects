@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- CSS Loader -->
+  <style>
+    /* Styles for the loader */
+    .loader {
+      width: 100px;
+      height: 100px;
+      border: 8px solid #1b4332;
+      border-top: 8px solid #a8dadc;
+      border-radius: 50%;
+      animation: spin 1.5s linear infinite;
+      margin: 0 auto;
+      margin-top: 200px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Hide the loader initially */
+    .hidden {
+      display: none;
+    }
+
+    /* Background styles */
+    body {
+      background-color: #f7fff7;
+    }
+  </style>
+</head>
+<body>
+  <!-- Your HTML content -->
+
+  <!-- CSS Loader -->
+  <div id="loader" class="loader hidden"></div>
+
+  <!-- Your JavaScript and other HTML content -->
+
+  <!-- JavaScript to show/hide the loader -->
+  <script>
+    // Show the loader
+    function showLoader() {
+     document.getElementById("loader").classList.remove("hidden");
+    }
+
+    // Hide the loader
+    function hideLoader() {
+      document.getElementById("loader").classList.add("hidden");
+    }
+  </script>
+</body>
+</html>

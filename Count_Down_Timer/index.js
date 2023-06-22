@@ -1,15 +1,14 @@
 var timeDisplay = document.querySelector('.time');
 var display = document.getElementById('display');
-const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+// Define arrays for days and months
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-let currentDate = new Date();
-var Day = '';
-var date = '';
-var month = '';
-var year = '';
-var hours = '';
-var minutes = '';
-var seconds = '';
+
+// Initialize variables for current date and time
+var currentDate = new Date();
+
+// Initialize variables for deadline date and time
 let deadLineDateObject = new Date();
 let deadLineDate = '';
 let deadLineDay = '';
@@ -19,67 +18,28 @@ let deadLineHours = '';
 let deadLineMinutes = '';
 let deadLineSeconds = '';
 
-function CurrentateAndTime() {
-  currentDate = new Date();
-  Day = days[currentDate.getDay() - 1];
-  date = currentDate.getDate();
-  month = months[currentDate.getMonth()];
-  year = currentDate.getFullYear();
-  hours = currentDate.getHours();
-  minutes = currentDate.getMinutes();
-  seconds = currentDate.getSeconds();
-}
+// Calculate the deadline date
+deadLineDateObject.setDate(currentDate.getDate() + 10);
 
-function formatNumberWithLeadingZero(number) {
-  return number.toString().padStart(2, '0');
-}
-
-function deadLineDateAndTime() {
-  deadLineDateObject.setDate(currentDate.getDate() + 10);
-  deadLineDate = deadLineDateObject.getDate();
-  deadLineDay = days[deadLineDateObject.getDay()];
-  deadLineMonth = months[deadLineDateObject.getMonth()];
-  deadLineYear = deadLineDateObject.getFullYear();
-  deadLineHours = deadLineDateObject.getHours();
-  deadLineMinutes = deadLineDateObject.getMinutes();
-  deadLineSeconds = deadLineDateObject.getSeconds();
+// Function to calculate the deadline date and time
+function calculateDeadlineDateAndTime() {
+  currentDate = new Date(); // Update the current date and time
 
   // Convert hours to 12-hour format
-  let amPm = deadLineHours >= 12 ? 'PM' : 'AM';
-  deadLineHours = deadLineHours % 12 || 12;
-  timeDisplay.innerText = deadLineDay + ", " + deadLineDate + " " + deadLineMonth + " " + deadLineYear + " " + deadLineHours + ":" + formatNumberWithLeadingZero(deadLineMinutes) + " " + amPm;
+  let amPm = currentDate.getHours() >= 12 ? 'PM' : 'AM';
+  let hours = currentDate.getHours() % 12 || 12;
+
+  // Update the time display with the current date and time
+  timeDisplay.innerText = days[deadLineDateObject.getDay()] + ", " + deadLineDateObject.getDate() + " " + months[deadLineDateObject.getMonth()] + " " + deadLineDateObject.getFullYear() + " " +deadLineDateObject.getHours() + ":" + deadLineDateObject.getMinutes() +" "+ amPm;
 
   // Calculate the remaining time
-  let remainingDays = deadLineDate - date;
-  let remainingHours = deadLineHours - hours;
-  let remainingMinutes = deadLineMinutes - minutes;
-  let remainingSeconds = deadLineSeconds - seconds;
+  let remainingTime = deadLineDateObject.getTime() - currentDate.getTime();
+  let remainingSeconds = Math.floor(remainingTime / 1000) % 60;
+  let remainingMinutes = Math.floor(remainingTime / (1000 * 60)) % 60;
+  let remainingHours = Math.floor(remainingTime / (1000 * 60 * 60)) % 24;
+  let remainingDays = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
 
-  // Adjust negative values for minutes and seconds
-  if (remainingMinutes < 0) {
-    remainingHours--;
-    remainingMinutes += 60;
-  }
-  if (remainingSeconds < 0) {
-    remainingMinutes--;
-    remainingSeconds += 60;
-  }
-
-  // Adjust negative values for hours and days
-  if (remainingHours < 0) {
-    remainingDays--;
-    remainingHours += 24;
-  }
-  if (remainingDays < 0) {
-    remainingDays += 7;
-  }
-
-  // Format numbers with leading zeros
-  remainingDays = formatNumberWithLeadingZero(remainingDays);
-  remainingHours = formatNumberWithLeadingZero(remainingHours);
-  remainingMinutes = formatNumberWithLeadingZero(remainingMinutes);
-  remainingSeconds = formatNumberWithLeadingZero(remainingSeconds);
-
+  // display with the remaining time
   display.innerHTML = `
     <p>${remainingDays} DAYS</p>
     <p>${remainingHours} HOURS</p>
@@ -88,7 +48,10 @@ function deadLineDateAndTime() {
   `;
 }
 
+// Call the calculateDeadlineDateAndTime function initially to display the countdown
+calculateDeadlineDateAndTime();
+
+// Update the countdown every second
 setInterval(() => {
-  CurrentateAndTime();
-  deadLineDateAndTime();
+  calculateDeadlineDateAndTime();
 }, 1000);

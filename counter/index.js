@@ -8,17 +8,26 @@ var display =document.getElementById('display');
 var count =0;
 
 increase.addEventListener('click',()=>{
-display.innerText=count++;
+   count++;
+   if(count>0){
+    display.style.color='green';
+   }
+ display.innerText=count;  
 })
 
 decrease.addEventListener('click',()=>{
-   if(count>0){
-    display.innerText=count--;
+   count--;
+   if(count<0){
+    display.style.color='red';
    }
-   
+ display.innerText=count;  
 })
 
 
 reset.addEventListener('click',()=>{
-display.innerText=0;
+count=0;
+if(count==0){
+ display.style.color='black';
+}
+display.innerText=count;  
 })

@@ -1,3 +1,5 @@
+
+
 var playButton =document.getElementById('play');
 var pauseButton =document.getElementById('pause');
 var video = document.getElementById('myVideo');
